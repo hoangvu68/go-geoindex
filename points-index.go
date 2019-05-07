@@ -20,7 +20,7 @@ func NewPointsIndex(resolution Meters) *PointsIndex {
 		return newSet()
 	}
 
-	return &PointsIndex{newGeoIndex(resolution, newSet), make(map[string]Point)}
+	return &PointsIndex{newGeoIndex(resolution, newSet), make(map[string]Point, 50000)}
 }
 
 // NewExpiringPointsIndex creates new PointIndex that expires the points in each cell after expiration minutes.
