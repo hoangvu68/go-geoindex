@@ -18,12 +18,13 @@ type set interface {
 type basicSet map[string]interface{}
 
 func newSet() set {
-	return basicSet(make(map[string]interface{}, 25000))
+	// @todo: CHANGE
+	return basicSet(make(map[string]interface{}, 5000))
 }
 
 // Clone creates a copy of the set where the values in clone set point to the same underlying reference as the original set
 func (set basicSet) Clone() set {
-	clone := basicSet(make(map[string]interface{}, 25000))
+	clone := basicSet(make(map[string]interface{}, 5000))
 	for k, v := range set {
 		clone[k] = v
 	}
