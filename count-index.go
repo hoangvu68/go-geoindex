@@ -24,7 +24,7 @@ func NewCountIndex(resolution Meters) *CountIndex {
 		return &singleValueAccumulatingCounter{}
 	}
 
-	return &CountIndex{newGeoIndex(resolution, newCounter), make(map[string]Point, 50000)}
+	return &CountIndex{newGeoIndex(resolution, newCounter), make(map[string]Point, 25000)}
 }
 
 // NewExpiringCountIndex creates an index, which maintains an expiring counter for each cell.
